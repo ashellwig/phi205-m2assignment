@@ -1,0 +1,192 @@
+%* File: main.tex
+%* Author: Ashton S. Hellwig
+%* Description: Main document markup
+%*
+%* __Assignment Information__
+%* Class: PHI 205-C11
+%* Assignment: Unit 2 Essay
+%* Due Date: Feb 20, 2020
+%*
+
+\documentclass[12pt,USenglish,draft]{article}
+  % Packages
+  \usepackage[USenglish]{babel}    % Localization
+  \usepackage[utf8]{inputenc}      % Internationalization
+  \usepackage{times}               % Times New Roman font-family
+  \usepackage{fancyhdr}            % Header customization
+  \usepackage{csquotes}            % Required by appendix
+  \usepackage[toc]{appendix}       % Appendix
+  \usepackage{bookmark}            % Required by appendix
+  \usepackage[dvipsnames]{xcolor}  % Text and link colors
+  \usepackage{hyperref}            % Hyperlinks/URLs
+  \usepackage{mdframed}            % Shaded box-like environment
+  \usepackage{soul}                % Text Highlighting
+  \usepackage{siunitx}             % Typesetting Units of Measurement
+  \usepackage{geometry}            % Page layout
+  \usepackage[us,12hr]{datetime}   % Date and time inference and calculation
+  \usepackage{setspace}            % Line and paragraph spacing
+  \usepackage[%
+    style=mla,%
+    backend=biber%
+  ]{biblatex}                      % Bibliography and reference management
+
+
+  % Macros
+  %% For philosophy (ethics and logic)
+  \input{phi-log-commands.tex}
+
+
+  % Bibliography
+  %%* Commands:
+  %%? Cite a text: \autocite{<key>}
+  %%? Cite a page: \autocite[<page>]{<key>}
+  %%? Cite a page with a prenote: \autocite[<prenote>][<page>]{<key>}
+  %%? Output full bibliography: \printbibliography
+  %%* Macros
+  %%? Initial citation of the textbook
+  \newcommand{\tbcite}[1]{%
+    (DeGeorge, R., \textit{Business Ethics}, 2009, p. #1)%
+  }
+  %%? Subsequent citations of the textbook
+  \newcommand{\tbsubcite}[1]{%
+    (DeGeorge, R., p. #1)%
+  }
+  %% Bibliography source
+  \addbibresource{main.bib}
+  \DeclareBibliographyCategory{consulted}
+  \addtocategory{consulted}{unit2lecture1}
+  \addtocategory{consulted}{unit2lecture2}
+
+
+  % Under-The-Hood Setup
+  %% Margins, paper size
+  \geometry{%
+    a4paper,%
+    bindingoffset=0.2in,%
+    top=1in,%
+    bottom=1in,%
+    left=1in,%
+    right=1in,%
+    footskip=0.25in%
+  }
+  %% Line spacing
+  \linespread{1.25}
+  %% Headers
+  % \pagestyle{fancy}
+  % \fancyhf{}
+  % \lhead{Compiled on \date\today at \currenttime}
+  % \rhead{A. Hellwig}
+  % \lfoot{PHI205-C11}
+  % \cfoot{\page}
+  % \rfoot{Unit 2 Assignment}
+
+
+
+  %% Hyper Link setup
+  \hypersetup{%
+    draft=false,%
+    colorlinks=true,%
+    citecolor=Blue,%
+    linkcolor=Blue,%
+    urlcolor=Blue
+  }
+
+
+  % Visible Document setup
+  %% Title Page
+  \title{Unit 2 Assignment (Essay):\\%
+    % \vspace{10pt}%
+    \Large{%
+      The Ford Pinto Case%
+    }
+  }
+  \author{%
+    Ashton Scott Hellwig\\%
+    \normalsize{ahellwig@student.cccs.edu}
+  }
+  \date{\today}
+  %% Section numbering
+  \renewcommand{\thesection}{\Roman{section}}
+  \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+  %% MDFramed Style
+  %%% Prompt Environment
+  \makeatletter
+  \mdfdefinestyle{prompt}{%
+    settings={%
+      \@mkboth{\mdf@frametitle}{\mdf@frametitle}
+    }
+  }
+  \makeatother
+  %%% Word Count Box
+  \mdfdefinestyle{wordcount}{%
+    linecolor=black,%
+    outerlinewidth=2pt,%
+    roundcorner=20pt,%
+    innertopmargin=4pt,%
+    innerbottommargin=4pt,%
+    innerleftmargin=4pt,%
+    innerrightmargin=4pt,%
+    leftmargin=4pt,%
+    rightmargin=4pt,%
+    backgroundcolor=green!20%
+  }
+
+
+% Document Content
+\begin{document}
+  % Setup
+  \maketitle
+  \thispagestyle{plain}
+  \vspace{-25pt}
+  \begin{mdframed}[%
+    style=wordcount,%
+    nobreak=true,%
+    align=center,%
+    userdefinedwidth=10em%
+  ]
+    \begin{center}
+      \textbf{Word Count}: 0000
+    \end{center}
+  \end{mdframed}
+
+  \tableofcontents
+  \vspace{20pt}
+  \begin{mdframed}
+    \large{\textbf{Prompt}}:
+
+    A number of critics have claimed that the Ford Motor Company acted
+      unethically in producing the Ford Pinto as it did, knowing that it could
+      have been made safer by adding an inexpensive part. Read carefully the
+      Case Study, ``\textit{The Ford Pinto Case},'' in De George, pgs. 298-299.
+      You are to write a paper in which you decide, on the basis of the best
+      \textit{utilitarian analysis} you can construct, whether Ford's producing
+      the Pinto as it did was ethically justifiable.
+  \end{mdframed}
+
+
+  % Document Content
+  \newpage
+  %% Introduction
+  \section{Introduction}
+    The chaos all began in the late 1960`s when there had been incredibly heavy
+      competition between the automobile manufacturers in the United States of
+      America in opposition to the automobile manufacturers in Japan
+      \tbcite{298}.
+
+
+  %% Bibliography
+  \newpage
+  \nocite{*}
+  %%% Works Cited
+  \printbibliography[%
+    heading=bibintoc,%
+    title={Works Cited},%
+    notcategory=consulted%
+  ]
+  %%% Works Consulted
+  \printbibliography[%
+    heading=bibintoc,%
+    title={Works Consulted},%
+    category=consulted%
+  ]
+\end{document}

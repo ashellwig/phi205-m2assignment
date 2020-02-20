@@ -1,0 +1,90 @@
+{
+    // Global Settings
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "*.aux": true,
+        "*.bbl": true,
+        "*.bcf": true,
+        "*.blg": true,
+        "*.fdb_latexmk": true,
+        "*.fls": true,
+        "*.log": true,
+        "*.run.xml": true,
+        "*.synctex.gz": true,
+        "*.synctex.gz*": true,
+        "*.toc": true,
+    },
+    // Latex
+    "[latex]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": false
+    },
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    // Spell Checker
+    "cSpell.enabled": true,
+    "cSpell.enabledLanguageIds": [
+        "css",
+        "html",
+        "latex",
+        "markdown",
+        "plaintext",
+        "restructuredtext",
+        "text"
+    ],
+    "cSpell.allowCompoundWords": false,
+    "cSpell.showStatus": true,
+    "cSpell.words": [
+        "prenote"
+    ]
+}

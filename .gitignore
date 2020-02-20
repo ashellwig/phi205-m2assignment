@@ -1,0 +1,12 @@
+*.log
+*.fls
+*.fdb_latexmk
+*.aux
+*.synctex.gz
+*.toc
+*.pdf
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+!ashton-hellwig_unit-7-essay.pdf
