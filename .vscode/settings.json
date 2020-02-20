@@ -23,6 +23,10 @@
         "editor.tabSize": 2,
         "editor.formatOnSave": false
     },
+    "[bibtex]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": false
+    },
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
